@@ -50,5 +50,12 @@ describe 'creating new post' do
       expect(page).not_to have_content 'ActionNotFound'
       expect(page).to have_content 'Nandos'
     end
+
+    it 'will display an error if post form is incorrect' do
+      visit new_post_path
+      fill_in 'Title', with: ''
+      click_on 'Submit'
+      expect(page).to have_content 'error'
+    end
   end
 end

@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(params[:post].permit(:title))
-    redirect_to posts_path
+    @post = Post.new(params[:post].permit(:title))
+    if @post.save
+      flash[:notice] = 'Post created'
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 end
