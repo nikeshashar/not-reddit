@@ -1,3 +1,9 @@
+- if @post.errors.any?
+  The form has the following errors:
+  %ul
+    - @post.errors.full_messages.each do |msg|
+      %li= msg
+
 %h2 submit to notreddit
 = form_for @post do |f|
   = f.label :title
