@@ -67,6 +67,14 @@ describe 'creating new post' do
         expect(page).not_to have_content 'ActionNotFound'
         expect(page).to have_content 'This is the greatest place on earth'
       end
+
+      it 'url link' do
+        visit new_post_path
+        fill_in 'Title', with: 'Nandos'
+        fill_in 'Url', with: 'http://nandos.co.uk'
+        click_on 'Submit'
+        expect(page).to have_css 'a.post-link'
+      end
     end
   end
 end
