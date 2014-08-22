@@ -57,5 +57,16 @@ describe 'creating new post' do
       click_on 'Submit'
       expect(page).to have_content 'error'
     end
+
+    context 'can create with optional' do
+      it 'text field' do
+        visit new_post_path
+        fill_in 'Title', with: 'Nandos'
+        fill_in 'Text', with: 'This is the greatest place on earth'
+        click_on 'Submit'
+        expect(page).not_to have_content 'ActionNotFound'
+        expect(page).to have_content 'This is the greatest place on earth'
+      end
+    end
   end
 end
