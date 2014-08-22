@@ -16,4 +16,9 @@ RSpec.describe User, :type => :model do
     expect(user).to have(1).error_on(:username)
   end
 
+  it 'is invalid for uniqueness for bob_github and Bob_GitHuB' do
+    create(:user)
+    user = User.create(username: 'Bob_GitHuB', email: 'bob@github.com', password: '12345678', password_confirmation: '12345678')
+    expect(user).to have(1).error_on(:username)
+  end
 end
