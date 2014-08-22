@@ -1,18 +1,15 @@
 !!!
 %html
   %head
-    %title Not Reddit
+    %title /not/reddit
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %header
-      - if user_signed_in?
-        = link_to('Logout', destroy_user_session_path, :method => :delete)
-      - else
-        = link_to('Login', new_user_session_path)
+      = render 'header'
     %section.notifications
-      %p.notice= notice
-      %p.alert= alert
+      %p.bg-success= notice
+      %p.bg-info= alert
     %main.container
       = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
