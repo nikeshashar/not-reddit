@@ -1,0 +1,5 @@
+%h2 submit to notreddit
+= form_for @post do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.submit 'Submit'

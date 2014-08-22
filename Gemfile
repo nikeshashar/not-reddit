@@ -27,6 +27,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'rspec-collection_matchers'
+  gem 'warden'
 end
 
 group :production do
