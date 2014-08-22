@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title Not Reddit
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %main.container
+      %p.notice= notice
+      %p.alert= alert
+      = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
