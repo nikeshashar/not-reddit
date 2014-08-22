@@ -8,4 +8,14 @@ describe 'displaying post feed' do
     end
   end
 
+  context 'with posts' do
+    before do
+      create(:post)  
+    end
+
+    it 'should display a list of posts' do
+      
+    end
+  end
+
 end

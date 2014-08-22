@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :user do
-    username 'bob_github'
+    username 'bobgithub'
     email 'bob@github.com'
     password '12345678'
     password_confirmation '12345678'
