@@ -4,7 +4,7 @@
   = devise_error_messages!
   %section
     = f.label :login
-    = f.email_field :login, autofocus: true
+    = f.text_field :login, autofocus: true
   %section
     = f.label :password
     = f.password_field :password, autocomplete: "off"
