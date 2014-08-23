@@ -9,7 +9,7 @@
       = render 'header'
     %section.notifications
       %p.bg-success= notice
-      %p.bg-info= alert
+      %p.bg-danger= alert
     %main.container
       = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
