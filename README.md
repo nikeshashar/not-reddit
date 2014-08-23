@@ -19,3 +19,29 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 * Capybara
 * Poltergeist
 * Database Cleaner
+
+How to set it up
+----
+```sh
+git clone git@github.com:yoshdog/not-reddit.git
+cd not-reddit
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:seed
+```
+
+How to run it
+----
+```sh
+cd not-reddit
+bin/rails s
+```
+
+open your browser and go to [localhost:3000](http://localhost:3000)
+
+How to test it
+----
+```sh
+cd not-reddit
+rspec
+```
