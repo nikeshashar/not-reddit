@@ -10,7 +10,8 @@ describe 'displaying post feed' do
 
   context 'with posts' do
     before do
-      Post.create(title: 'Fails')
+      user = create(:user)
+      create(:post, user: user)
     end
 
     it 'should display a list of posts' do
@@ -49,6 +50,7 @@ describe 'creating new post' do
       click_on 'Submit'
       expect(page).not_to have_content 'ActionNotFound'
       expect(page).to have_content 'Nandos'
+      expect(page).to have_content 'by bobgithub'
     end
 
     it 'will display an error if post form is incorrect' do
@@ -74,6 +76,7 @@ describe 'creating new post' do
         fill_in 'Url', with: 'http://nandos.co.uk'
         click_on 'Submit'
         expect(page).to have_css 'a.post-link'
+        expect(find_link('Nandos')[:href]).to eq 'http://nandos.co.uk'
       end
     end
   end
