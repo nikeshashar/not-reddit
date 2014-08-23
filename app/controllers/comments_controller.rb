@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment saved"
       redirect_to post_path(@post)
     else
-      render 'posts#new'
+      render 'posts/new'
     end
   end
 end
