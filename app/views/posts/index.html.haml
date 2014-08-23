@@ -1,9 +1,5 @@
 - if @posts.any?
-  - @posts.each do |post|
-    %h2
-      %a.post-link{href: post.url}= post.title
-    %p= post.text
-    %p= "by #{post.user.username}"
+  = render @posts
 - else
   %h2 No posts yet
 = link_to 'New post', new_post_path
