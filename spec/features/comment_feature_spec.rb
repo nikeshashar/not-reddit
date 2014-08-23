@@ -46,6 +46,7 @@ describe 'creating comments' do
       fill_in 'Body', with: 'Worst post eva!'
       click_on 'Save'
       expect(page).to have_content 'Worst post eva!'
+      expect(page).to have_content '1 comment'
     end
   end
 end

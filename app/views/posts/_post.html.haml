@@ -4,4 +4,4 @@
   %p= post.text
   %p.text-muted.small= "submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.username}"
   = link_to post_path(post), class: 'comment-text' do
-    no comments
+    = comments_in_words(post.comments.count)
