@@ -15,4 +15,16 @@ RSpec.describe Post, :type => :model do
     post = Post.create(title: '@abcdef')
     expect(post).to have(1).error_on(:title)
   end
+
+  context '#link' do
+    it 'returns the post path if url is blank' do
+      post = create(:post)
+      expect(post.link).to eq "/posts/#{post.id}"
+    end
+
+    it 'returns the url if url is valid' do
+      post = create(:post, url: 'http://google.com')
+      expect(post.link).to eq "http://google.com"
+    end
+  end
 end

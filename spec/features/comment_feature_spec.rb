@@ -36,7 +36,7 @@ describe 'creating comments' do
 
     it 'I should not see the submit comments form' do
       visit post_path(@post)
-      expect(page).not_to have_css 'form.new-comments'
+      expect(page).not_to have_css '.new_comment'
     end
   end
 
