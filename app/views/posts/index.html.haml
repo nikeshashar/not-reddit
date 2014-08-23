@@ -1,5 +1,5 @@
 - if @posts.any?
-  = render @posts
+  %section.row= render @posts
 - else
   %h2 No posts yet
 = link_to 'New post', new_post_path

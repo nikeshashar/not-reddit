@@ -1,4 +1,5 @@
-%h2
-  %a.post-link{href: post.url}= post.title
-%p= post.text
-%p= "by #{post.user.username}"
+%article.post.col-md-4.col-sm-6.col-xs-10
+  %h4
+    %a.post-link{href: post.url}= post.title
+  %p= post.text
+  %p.text-muted.small= "submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.username}"
