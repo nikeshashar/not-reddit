@@ -18,6 +18,11 @@ RSpec.describe Vote, :type => :model do
       expect(vote).to have(1).error_on(:value)
     end
 
+    it 'is invalid if user has already voted on post' do
+      Vote.create(value: 1, user: @bob, post: @post)
+      vote = Vote.create(value: 1, user: @bob, post: @post)
+      expect(vote).to have(1).error_on(:user_id)
+    end
   end
 
   describe 'new down vote' do

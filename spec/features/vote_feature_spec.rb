@@ -40,5 +40,22 @@ describe 'voting' do
       find('a.vote-up').click
       expect(page).to have_css '.vote-score', text: '1'
     end
+
+    context 'and have already up voted a post' do
+      before do
+        create(:vote, user: @bob, post: @post)  
+      end
+
+      it 'will not change the score if I up vote again', js: true do
+        find('a.vote-up').click
+        expect(page).to have_css '.vote-score', text: '1'
+      end
+
+      it 'will change the score to -1 when I down vote the post', js: true do
+        find('a.vote-down').click
+        expect(page).to have_css '.vote-score', text: '-1'
+      end
+      
+    end
   end
 end
