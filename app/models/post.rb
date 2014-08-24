@@ -13,4 +13,8 @@ class Post < ActiveRecord::Base
   def score
     votes.sum(:value)
   end
+
+  def has_already_voted? user, value
+    votes.any?{|vote| vote.user_id == user.id && vote.value == value}
+  end
 end

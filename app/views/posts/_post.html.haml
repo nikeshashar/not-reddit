@@ -1,12 +1,12 @@
 %article.panel.post.col-md-8.col-sm-8.col-xs-8
   %section.votes
-    = link_to post_votes_path(post, value: 1), class: 'vote-up' do
+    = link_to post_votes_path(post, value: 1), class: add_voting_colours(post.has_already_voted?(current_user, 1),'vote-up') do
       %span.glyphicon.glyphicon-chevron-up
     %br
     %section.vote-score.badge
       = post.score
     %br
-    = link_to post_votes_path(post, value: -1, user: current_user), class: 'vote-down' do
+    = link_to post_votes_path(post, value: -1, user: current_user), class: add_voting_colours(post.has_already_voted?(current_user, -1),'vote-down') do
       %span.glyphicon.glyphicon-chevron-down
   %section.content
     %h4

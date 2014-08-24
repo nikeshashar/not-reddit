@@ -47,4 +47,25 @@ RSpec.describe Post, :type => :model do
       expect(post.score).to eq -1
     end
   end
+
+  describe '#has_already_voted?' do
+    before do
+      @bob = create(:user)
+      @post = create(:post, user: @bob)  
+    end
+
+    it 'returns false if has not voted' do
+      expect(@post.has_already_voted?(@bob, -1)).to be false
+    end
+
+    it 'returns true if user has voted down' do
+      vote = @post.votes.create(value: -1, user: @bob)
+      expect(@post.has_already_voted?(@bob, -1)).to be true
+    end
+
+    it 'returns false is user has voted the wrong direction' do
+      vote = @post.votes.create(value: -1, user: @bob)
+      expect(@post.has_already_voted?(@bob, 1)).to be false
+    end
+  end
 end

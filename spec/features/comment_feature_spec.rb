@@ -54,6 +54,7 @@ describe 'creating comments' do
       fill_in 'Body', with: ''
       click_on 'Save'
       expect(page).not_to have_content '1 comment'
+      expect(page).to have_content 'Error'
     end
   end
 end

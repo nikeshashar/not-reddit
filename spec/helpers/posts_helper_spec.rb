@@ -15,5 +15,13 @@ RSpec.describe PostsHelper, :type => :helper do
     end
   end
 
+  describe '#add_voting_colours' do
+    it 'adds selected class if user has voted' do
+      expect(add_voting_colours(true, 'vote-up')).to eq 'vote-up selected'
+    end
 
+    it 'returns original if user has not voted' do
+      expect(add_voting_colours(false, 'vote-up')).to eq 'vote-up'
+    end
+  end
 end
