@@ -3,13 +3,21 @@
   %ul
     - @post.errors.full_messages.each do |msg|
       %li= msg
-
 %h2 submit to notreddit
-= form_for @post do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :text
-  = f.text_area :text
-  = f.label :url
-  = f.text_field :url
-  = f.submit 'Submit'
+%ul.nav.nav-tabs#new-posts{role: "tablist"}
+  %li.active
+    %a{href: "#link", role: "tab", "data-toggle" => "tab"} Link Post
+  %li
+    %a{href: "#text", role: "tab", "data-toggle" => "tab"} Text Post
+%section.tab-content
+  %section.tab-pane.fade.in.active#link
+    = form_for @post do |f|
+      = f.label :title
+      = f.text_field :title
+      = f.label :text
+      = f.text_area :text
+      = f.label :url
+      = f.text_field :url
+      = f.submit 'Submit'
+    %section.tab-pane.fade#text
+      %h2 hi
