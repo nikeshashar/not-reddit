@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'thin'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
   gem 'rspec-rails'
