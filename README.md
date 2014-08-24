@@ -8,6 +8,9 @@
 * Users can submit a text post
 * Users can comment on posts
 * Users can up and down vote posts 
+* Users only has one vote per post
+* Users can change their vote from up to down and vice versa
+* Post displays the voting score
 
 ## Missing Features
 * Display posts that are hot
@@ -15,6 +18,10 @@
 * Display posts that are rising
 * Display posts that are top
 * Display posts that are controversial
+* Users can edit their posts
+* Users can delete their posts
+* Users can edit their comments
+* Users can delete their comments
 * User page displays user's posts and comments
 * User can reply to comments
 * User can up and down vote comments and replies
