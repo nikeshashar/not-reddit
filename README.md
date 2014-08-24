@@ -10,7 +10,15 @@
 * Users can up and down vote posts 
 
 ## Missing Features
-*Implement post sorting algorithms for hot, new, rising, controversial and top
+* Display posts that are hot
+* Display posts that are new
+* Display posts that are rising
+* Display posts that are top
+* Display posts that are controversial
+* User page displays user's posts and comments
+* User can reply to comments
+* User can up and down vote comments and replies
+* Comments are ordered by score
 
 ## Deployed
 Check it out on [Heroku](http://not-reddit.herokuapp.com/)
