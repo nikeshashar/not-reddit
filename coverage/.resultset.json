@@ -474,6 +474,8 @@
       "/Users/yoshi/dev/not-reddit/app/controllers/comments_controller.rb": [
         1,
         1,
+        null,
+        1,
         1,
         1,
         1,
@@ -547,6 +549,6 @@
         null
       ]
     },
-    "timestamp": 1408898587
+    "timestamp": 1408899002
   }
 }
