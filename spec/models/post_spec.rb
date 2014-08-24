@@ -58,6 +58,10 @@ RSpec.describe Post, :type => :model do
       expect(@post.has_already_voted?(@bob, -1)).to be false
     end
 
+    it 'returns false if no user' do
+      expect(@post.has_already_voted?(nil, -1)).to be false
+    end
+
     it 'returns true if user has voted down' do
       vote = @post.votes.create(value: -1, user: @bob)
       expect(@post.has_already_voted?(@bob, -1)).to be true
