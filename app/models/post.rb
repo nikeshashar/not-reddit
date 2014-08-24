@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   end
 
   def has_already_voted? user, value
+    return false if user.nil?
     votes.any?{|vote| vote.user_id == user.id && vote.value == value}
   end
 end
