@@ -13,6 +13,7 @@ gem 'spring',        group: :development
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'thin'
 
 group :development, :test do
   gem 'rspec-rails'
