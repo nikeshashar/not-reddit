@@ -14,4 +14,6 @@ RSpec.describe PostsHelper, :type => :helper do
       expect(comments_in_words(2)).to eq '2 comments'
     end
   end
+
+
 end

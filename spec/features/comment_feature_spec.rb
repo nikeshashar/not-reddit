@@ -48,5 +48,12 @@ describe 'creating comments' do
       expect(page).to have_content 'Worst post eva!'
       expect(page).to have_content '1 comment'
     end
+
+    it 'I cannot submit a blank comment' do
+      visit post_path(@post)
+      fill_in 'Body', with: ''
+      click_on 'Save'
+      expect(page).not_to have_content '1 comment'
+    end
   end
 end
