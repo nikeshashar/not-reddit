@@ -27,4 +27,24 @@ RSpec.describe Post, :type => :model do
       expect(post.link).to eq "http://google.com"
     end
   end
+
+  context '#score' do
+    let(:user) { create(:user) }
+    it 'returns 0 if there is no votes for the post' do
+      post = create(:post, user: user)
+      expect(post.score).to eq 0
+    end
+
+    it 'returns 1 if there is 1 up vote for the post' do
+      post = create(:post, user: user)
+      post.votes.create(value: 1, user: user)
+      expect(post.score).to eq 1
+    end
+
+    it 'returns -1 if there is 1 down vote for the post' do
+      post = create(:post, user: user)
+      post.votes.create(value: -1, user: user)
+      expect(post.score).to eq -1
+    end
+  end
 end

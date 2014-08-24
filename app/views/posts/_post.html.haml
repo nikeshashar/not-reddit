@@ -1,7 +1,17 @@
 %article.panel.post.col-md-8.col-sm-8.col-xs-8
-  %h4
-    %a.post-link{href: post.link}= post.title
-  %p= post.text
-  %p.text-muted.small= "submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.username}"
-  = link_to post_path(post), class: 'comment-text' do
-    = comments_in_words(post.comments.count)
+  %section.votes
+    = link_to post_votes_path(post, value: 1), class: 'vote-up' do
+      %span.glyphicon.glyphicon-chevron-up
+    %br
+    %section.vote-score.badge
+      = post.score
+    %br
+    = link_to post_votes_path(post, value: -1, user: current_user), class: 'vote-down' do
+      %span.glyphicon.glyphicon-chevron-down
+  %section.content
+    %h4
+      %a.post-link{href: post.link}= post.title
+    %p= post.text
+    %p.text-muted.small= "submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.username}"
+    = link_to post_path(post), class: 'comment-text' do
+      = comments_in_words(post.comments.count)
