@@ -1,5 +1,6 @@
 # Not Reddit
 [![Code Climate](https://codeclimate.com/github/yoshdog/not-reddit/badges/gpa.svg)](https://codeclimate.com/github/yoshdog/not-reddit)
+[![Code Climate](https://codeclimate.com/github/yoshdog/not-reddit/badges/gpa.svg)](https://codeclimate.com/github/yoshdog/not-reddit)
 
 ## Deployed
 Check it out on [Heroku](http://not-reddit.herokuapp.com/)
