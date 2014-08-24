@@ -428,6 +428,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         1,
@@ -438,6 +439,8 @@
         1,
         1,
         1,
+        1,
+        null,
         null,
         null,
         1,
@@ -466,13 +469,19 @@
       "/Users/yoshi/dev/not-reddit/app/helpers/posts_helper.rb": [
         1,
         1,
-        13,
+        18,
         3,
         null,
         null
       ],
+      "/Users/yoshi/dev/not-reddit/app/helpers/votes_helper.rb": [
+        1,
+        null
+      ],
       "/Users/yoshi/dev/not-reddit/app/controllers/comments_controller.rb": [
         1,
+        1,
+        null,
         1,
         1,
         1,
@@ -492,9 +501,9 @@
         null,
         1,
         1,
-        6,
         7,
-        5,
+        9,
+        6,
         null,
         null
       ],
@@ -503,7 +512,7 @@
         1,
         null,
         1,
-        9,
+        14,
         null,
         null,
         1,
@@ -525,6 +534,16 @@
         5,
         5,
         5,
+        null,
+        null
+      ],
+      "/Users/yoshi/dev/not-reddit/app/controllers/votes_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -541,12 +560,25 @@
         1,
         null,
         1,
-        12,
+        null,
+        1,
+        17,
         3,
         null,
+        null,
+        1,
+        19,
+        null,
+        null
+      ],
+      "/Users/yoshi/dev/not-reddit/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1408898587
+    "timestamp": 1408909031
   }
 }
