@@ -10,14 +10,17 @@
   %li
     %a{href: "#text", role: "tab", "data-toggle" => "tab"} Text Post
 %section.tab-content
-  %section.tab-pane.fade.in.active#link
+  %section.tab-pane.active#link
+    = form_for @post do |f|
+      = f.label :title
+      = f.text_field :title
+      = f.label :url
+      = f.text_field :url
+      = f.submit 'Submit', id: 'submit-link'
+  %section.tab-pane#text
     = form_for @post do |f|
       = f.label :title
       = f.text_field :title
       = f.label :text
       = f.text_area :text
-      = f.label :url
-      = f.text_field :url
-      = f.submit 'Submit'
-    %section.tab-pane.fade#text
-      %h2 hi
+      = f.submit 'Submit', id: 'submit-text'

@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates :title, length: { minimum: 3 }, format: { with: /\A[A-Za-z]/ }
 
   def link
-    return "/posts/#{id}" if url.empty?
+    return "/posts/#{id}" if url.nil?
     url
   end
 end

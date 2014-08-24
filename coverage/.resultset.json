@@ -466,7 +466,7 @@
       "/Users/yoshi/dev/not-reddit/app/helpers/posts_helper.rb": [
         1,
         1,
-        14,
+        13,
         3,
         null,
         null
@@ -480,9 +480,6 @@
         1,
         1,
         1,
-        null,
-        0,
-        null,
         null,
         null
       ],
@@ -506,7 +503,7 @@
         1,
         null,
         1,
-        10,
+        9,
         null,
         null,
         1,
@@ -517,10 +514,10 @@
         4,
         4,
         4,
-        3,
-        3,
+        2,
+        2,
         null,
-        1,
+        2,
         null,
         null,
         null,
@@ -544,12 +541,12 @@
         1,
         null,
         1,
-        13,
-        2,
+        12,
+        3,
         null,
         null
       ]
     },
-    "timestamp": 1408895362
+    "timestamp": 1408898587
   }
 }

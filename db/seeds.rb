@@ -12,7 +12,7 @@ Comment.destroy_all
 
 users = []
 post_titles = %w{Nandos JayZ England Poker Australia BBC}
-urls = ['', '', 'http://nandos.co.uk', 'http://google.com', 'http://bbc.co.uk']
+urls = [nil, nil, 'http://nandos.co.uk', 'http://google.com', 'http://bbc.co.uk']
 statements = ['', '', 'Hipstas are taking over', 'Today is cray cray!']
 
 users << User.create(username: 'bobgithub', email: 'bob@github.com', password: '12345678', password_confirmation: '12345678')
