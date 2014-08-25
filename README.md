@@ -46,7 +46,7 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 * Poltergeist
 * Database Cleaner
 
-###How to set it up
+### How to set it up
 ```sh
 git clone git@github.com:yoshdog/not-reddit.git
 cd not-reddit
@@ -55,7 +55,7 @@ bin/rake db:migrate
 bin/rake db:seed
 ```
 
-###How to run it
+### How to run it
 ```sh
 cd not-reddit
 bin/rails s
@@ -63,7 +63,7 @@ bin/rails s
 
 open your browser and go to [localhost:3000](http://localhost:3000)
 
-###How to test it
+### How to test it
 ```sh
 cd not-reddit
 rspec
