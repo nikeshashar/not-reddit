@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'newest'
       get 'top'
+      get 'controversial'
     end
   end
 

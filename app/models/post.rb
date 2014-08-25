@@ -26,9 +26,16 @@ class Post < ActiveRecord::Base
     (order + sign * seconds / 45000).round(7)
   end
 
+  def controversy_score
+    return 0 if up_votes <= 0 || down_votes <= 0
+    magnitude = up_votes + down_votes
+    balance = (up_votes > down_votes ) ? down_votes.to_f / up_votes : up_votes.to_f / down_votes
+    magnitude ** balance
+  end
+
   def created_by? user
     return false if user.nil?
-    user.id == self.user_id ? true : false
+    user.id == self.user_id
   end
 
   private
@@ -38,4 +45,11 @@ class Post < ActiveRecord::Base
     -1
   end
 
+  def up_votes
+    self.votes.select{|vote| vote.value == 1 }.count
+  end
+
+  def down_votes
+    self.votes.select{|vote| vote.value == -1 }.count
+  end
 end

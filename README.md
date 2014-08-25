@@ -65,7 +65,8 @@ rspec
 * Implemented Reddit's hot points algorithm
 * Display posts that are hot
 * Display posts that are new
-* Display posts that are top
+* Display by top posts
+* Display posts by controversy score
 * User page displays user's posts and comments
 * Users can delete their posts
 * Users can delete their comments
@@ -74,7 +75,6 @@ rspec
 ## Missing Features
 
 * Display posts that are rising
-* Display posts that are controversial (total votes / max(abs(upvotes-downvotes), 1))
 * Users can edit their posts
 * Users can edit their comments
 * User can reply to comments

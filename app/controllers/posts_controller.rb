@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :newest, :top]
+  before_action :authenticate_user!, except: [:index, :show, :newest, :top, :controversial]
 
   def index
     @posts = Post.all.sort_by(&:hot_points).reverse
@@ -40,5 +40,10 @@ class PostsController < ApplicationController
     Post.find(params[:id]).destroy
     flash[:notice] = "Post deleted successfully"
     redirect_to posts_path
+  end
+
+  def controversial
+    @posts = Post.all.sort_by(&:controversy_score).reverse
+    render 'index'
   end
 end

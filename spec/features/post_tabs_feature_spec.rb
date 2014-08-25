@@ -41,4 +41,13 @@ describe 'post tabs' do
       expect(page).to have_selector("article:nth-child(4)", text: "Fail")
     end
   end
+
+  context 'controversial' do
+    it 'displays posts ordered by their controversial score' do
+      click_link 'Controversial'
+      expect(page).to have_selector("article:nth-child(2)", text: "Pancakes")
+      expect(page).to have_selector("article:nth-child(3)", text: "Url Posting")
+      expect(page).to have_selector("article:nth-child(4)", text: "Fail")
+    end
+  end
 end
