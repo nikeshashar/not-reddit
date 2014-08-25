@@ -55,11 +55,12 @@ rspec
 * Post displays the voting score
 * Implemented Reddit's hot points algorithm
 * Display posts that are hot
+* Display posts that are new
+* Display posts that are top
+
 
 ## Missing Features
-* Display posts that are new
 * Display posts that are rising
-* Display posts that are top
 * Display posts that are controversial
 * Users can edit their posts
 * Users can delete their posts
