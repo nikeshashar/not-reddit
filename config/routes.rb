@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'newest'
       get 'top'
       get 'controversial'
+      get 'rising'
     end
   end
 
