@@ -19,6 +19,12 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 * Rails 4.1.4
 * Postgresql
 * Devise
+* Coffeescript / Javascript
+* JQuery
+* AJAX
+* SASS / CSS
+* HAML
+* Bootstrap
 
 ## Testing Suite
 ### Unit Testing
@@ -28,7 +34,10 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 ### Integration Testing
 * Capybara
 * Poltergeist
+* Factory Girl
 * Database Cleaner
+* Launchy
+* Warden
 
 ### How to set it up
 ```sh
