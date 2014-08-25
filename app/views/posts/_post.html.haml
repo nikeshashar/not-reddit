@@ -12,6 +12,8 @@
     %h4
       %a.post-link{href: post.link}= post.title
     %p= post.text
-    %p.text-muted.small= "submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.username}"
+    %p.text-muted.small
+      submitted #{time_ago_in_words(post.created_at)} ago by
+      = link_to "#{post.user.username}", user_path(post.user.id)
     = link_to post_path(post), class: 'comment-text' do
       = comments_in_words(post.comments.count)

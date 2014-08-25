@@ -437,6 +437,10 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
+        1,
         null
       ],
       "/Users/yoshi/dev/not-reddit/app/models/user.rb": [
@@ -474,13 +478,17 @@
       "/Users/yoshi/dev/not-reddit/app/helpers/posts_helper.rb": [
         1,
         1,
-        37,
-        3,
+        38,
+        4,
         null,
         null,
         1,
-        70,
+        72,
         null,
+        null
+      ],
+      "/Users/yoshi/dev/not-reddit/app/helpers/users_helper.rb": [
+        1,
         null
       ],
       "/Users/yoshi/dev/not-reddit/app/helpers/votes_helper.rb": [
@@ -553,8 +561,19 @@
         null,
         1,
         1,
+        1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/yoshi/dev/not-reddit/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
         1,
         1,
         null,
@@ -586,16 +605,16 @@
         1,
         null,
         1,
-        36,
+        37,
         8,
         null,
         null,
         1,
-        91,
+        92,
         null,
         null,
         1,
-        72,
+        74,
         29,
         null,
         null,
@@ -624,6 +643,6 @@
         null
       ]
     },
-    "timestamp": 1408975411
+    "timestamp": 1408979627
   }
 }

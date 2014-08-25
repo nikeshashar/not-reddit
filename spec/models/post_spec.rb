@@ -85,12 +85,12 @@ RSpec.describe Post, :type => :model do
 
     it 'should return 6109 if score is 1 and created now' do
       create(:vote, user: @bob, post: @post)
-      expect(@post.hot_points).to eq 6109.0
+      expect(@post.hot_points).to be_within(10).of(6109.0)
     end
 
     it 'should return if score is -1 and created now' do
       create(:down_vote, user: @bob, post: @post)
-      expect(@post.hot_points).to eq -6110.0
+      expect(@post.hot_points).to be_within(10).of(-6110.0)
     end
 
   end

@@ -1,0 +1,5 @@
+%blockquote
+  %p= comment.body
+  %footer
+    = link_to "#{comment.user.username}", user_path(comment.user.id) 
+    #{time_ago_in_words(comment.created_at)} ago
