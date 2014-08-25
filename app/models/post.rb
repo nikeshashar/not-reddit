@@ -14,11 +14,6 @@ class Post < ActiveRecord::Base
     votes.sum(:value)
   end
 
-  def has_already_voted? user, value
-    return false if user.nil?
-    self.votes.any?{|vote| vote.user_id == user.id && vote.value == value}
-  end
-
   def hot_points
     order = Math.log([1, self.score.abs].max,10)
     sign = sign_from self.score
@@ -28,9 +23,12 @@ class Post < ActiveRecord::Base
 
   def controversy_score
     return 0 if up_votes <= 0 || down_votes <= 0
-    magnitude = up_votes + down_votes
-    balance = (up_votes > down_votes ) ? down_votes.to_f / up_votes : up_votes.to_f / down_votes
     magnitude ** balance
+  end
+
+  def has_already_voted? user, value
+    return false if user.nil?
+    self.votes.any?{|vote| vote.user_id == user.id && vote.value == value}
   end
 
   def created_by? user
@@ -51,5 +49,13 @@ class Post < ActiveRecord::Base
 
   def down_votes
     self.votes.select{|vote| vote.value == -1 }.count
+  end
+
+  def magnitude
+    up_votes + down_votes
+  end
+
+  def balance
+    (up_votes > down_votes ) ? down_votes.to_f / up_votes : up_votes.to_f / down_votes
   end
 end
