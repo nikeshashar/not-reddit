@@ -1,6 +1,0 @@
-%section.row
-  = link_to 'New post', new_post_path, class: "col-md-4 col-sm-2 col-xs-2 pull-right btn btn-success"
-  - if @posts.any?
-    = render @posts
-  - else
-    %h2 No posts yet
