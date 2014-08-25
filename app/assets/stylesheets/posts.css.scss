@@ -10,12 +10,21 @@
   .votes {
     float: left;
     margin-top: 3%;
-    a { margin-left: 15%; }
+    span {
+      font-size: 18px;
+    }
   }
 
   .content {
     padding-top: 0;
     margin-left: 20%;
+  }
+
+
+  .badge {
+    background-color: #6C7A89;
+    font-size: 18px;
+    padding: 5px;
   }
 
 }
