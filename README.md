@@ -58,13 +58,14 @@ rspec
 * Display posts that are new
 * Display posts that are top
 * User page displays user's posts and comments
+* Users can delete their posts
 
 
 ## Missing Features
+[Reddit algoritms](https://github.com/reddit/reddit/blob/master/r2/r2/lib/db/_sorts.pyx)
 * Display posts that are rising
-* Display posts that are controversial
+* Display posts that are controversial (total votes / max(abs(upvotes-downvotes), 1))
 * Users can edit their posts
-* Users can delete their posts
 * Users can edit their comments
 * Users can delete their comments
 * User can reply to comments

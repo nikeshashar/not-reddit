@@ -92,6 +92,25 @@ RSpec.describe Post, :type => :model do
       create(:down_vote, user: @bob, post: @post)
       expect(@post.hot_points).to be_within(10).of(-6110.0)
     end
+  end
 
+  describe '#created_by?' do
+    before do
+      @bob = create(:user)
+      @anna = create(:anna)
+      @post = create(:post, user: @bob)
+    end
+
+    it 'returns false for nil user' do
+      expect(@post.created_by?(nil)).to eq false
+    end
+
+    it 'returns true if user is the creator of post' do
+      expect(@post.created_by?(@bob)).to eq true
+    end
+
+    it 'returns false if user is not the creator of post' do
+      expect(@post.created_by?(@anna)).to eq false
+    end
   end
 end
