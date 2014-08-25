@@ -2,8 +2,19 @@
   .container
     .navbar-header
       %a.navbar-brand{href: "/"} /not/reddit
-    .navbar-right
+    %ul.nav.navbar-nav
+      %li.active
+        = link_to 'Hot', posts_path
+      %li
+        = link_to 'New', newest_posts_path
+      %li
+        = link_to 'Top', top_posts_path
+    %ul.nav.navbar-nav.pull-right
       - if user_signed_in?
-        = link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger")
+        %li
+          = link_to('Logout', destroy_user_session_path, method: :delete)
       - else
-        = link_to('Login', new_user_session_path, class: "btn btn-info")
+        %li
+          = link_to('Login', new_user_session_path)
+        %li
+          = link_to('Register', new_user_registration_path)

@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :newest, :top]
 
   def index
-    @posts = Post.all.sort_by{ |post| post.hot_points }.reverse
+    @posts = Post.all.sort_by(&:hot_points).reverse
   end
 
   def new
@@ -24,5 +24,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+  end
+
+  def newest
+    @posts = Post.order(created_at: :desc)
+  end
+
+  def top
+    @posts = Post.all.sort_by(&:score).reverse
   end
 end
