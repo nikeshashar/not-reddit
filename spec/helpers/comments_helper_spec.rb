@@ -1,15 +1,19 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CommentsHelper. For example:
-#
-# describe CommentsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe CommentsHelper, :type => :helper do
 
+  describe '#comment_delete_link' do
+    before do
+      @bob = create(:user)
+      @post = create(:post, user: @bob)
+      @comment = create(:comment, user: @bob, post: @post)
+    end
+    it 'returns a blank string if user is not owner of comment' do
+      expect(comment_delete_link(false, @comment)).to eq ''
+    end
+
+    it 'returns a link to delete the comment if it is the owner' do
+      expect(comment_delete_link(true, @comment)).to eq(link_to('delete', comment_path(@comment, post_id: @comment.post.id), method: :delete, class: 'delete-comment pull-right'))
+    end
+  end
 end

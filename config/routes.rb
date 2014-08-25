@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :comments
   root to: 'posts#index'
 end

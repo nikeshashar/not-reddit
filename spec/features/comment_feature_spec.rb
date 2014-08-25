@@ -58,3 +58,23 @@ describe 'creating comments' do
     end
   end
 end
+
+describe 'deleting comments' do
+  before do
+    @bob = create(:user)
+    login_as @bob
+    @post = create(:post, user: @bob)
+    @comment = create(:comment, user: @bob, post: @post)
+  end
+
+  it 'as the creator has option to delete comment' do
+    visit post_path(@post)
+    expect(page).to have_css '.delete-comment', text: 'delete' 
+  end
+
+  it 'as the creator can delete link' do
+    visit post_path(@post)
+    find('.delete-comment').click
+    expect(page).not_to have_content 'MyText'
+  end
+end
