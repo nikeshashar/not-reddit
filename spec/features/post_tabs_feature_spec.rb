@@ -50,4 +50,13 @@ describe 'post tabs' do
       expect(page).to have_selector("article:nth-child(4)", text: "Fail")
     end
   end
+
+  context 'rising' do
+    it 'displays posts ordered by the number of up votes' do
+      click_link 'Rising'
+      expect(page).to have_selector("article:nth-child(2)", text: "Url Posting")
+      expect(page).to have_selector("article:nth-child(3)", text: "Pancakes")
+      expect(page).to have_selector("article:nth-child(4)", text: "Fail")
+    end
+  end
 end

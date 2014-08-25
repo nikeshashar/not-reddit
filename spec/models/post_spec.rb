@@ -140,4 +140,34 @@ RSpec.describe Post, :type => :model do
       expect(@post.controversy_score).to be_within(0.01).of(1.73)
     end
   end
+
+  describe '#up_votes' do
+    before do
+      @bob = create(:user)
+      @anna = create(:anna)
+      @miahi = create(:miahi)
+      @post = create(:post, user: @bob)
+    end
+
+    it 'returns 0 if there are 0 votes' do
+      expect(@post.up_votes).to eq 0
+    end
+
+    it 'returns 0 if there is 1 down vote' do
+      create(:down_vote, user: @anna, post: @post)
+      expect(@post.up_votes).to eq 0
+    end
+
+    it 'returns 1 if there is 1 up vote' do
+      create(:vote, user: @anna, post: @post)
+      expect(@post.up_votes).to eq 1
+    end
+
+    it 'returns 2 if there is 2 up votes and 1 down vote' do
+      create(:vote, user: @bob, post: @post)
+      create(:vote, user: @anna, post: @post)
+      create(:down_vote, user: @miahi, post: @post)
+      expect(@post.up_votes).to eq 2
+    end
+  end
 end

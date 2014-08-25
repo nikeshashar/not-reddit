@@ -36,15 +36,15 @@ class Post < ActiveRecord::Base
     user.id == self.user_id
   end
 
+  def up_votes
+    self.votes.select{|vote| vote.value == 1 }.count
+  end
+
   private
   def sign_from score
     return 0 if score == 0
     return 1 if score > 0
     -1
-  end
-
-  def up_votes
-    self.votes.select{|vote| vote.value == 1 }.count
   end
 
   def down_votes

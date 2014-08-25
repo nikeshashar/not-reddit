@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :newest, :top, :controversial]
+  before_action :authenticate_user!, except: [:index, :show, :newest, :top, :controversial, :rising]
 
   def index
     @posts = Post.all.sort_by(&:hot_points).reverse
@@ -44,6 +44,11 @@ class PostsController < ApplicationController
 
   def controversial
     @posts = Post.all.sort_by(&:controversy_score).reverse
+    render 'index'
+  end
+
+  def rising
+    @posts = Post.all.sort_by(&:up_votes).reverse
     render 'index'
   end
 end
