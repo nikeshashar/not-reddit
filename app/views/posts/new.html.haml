@@ -12,15 +12,19 @@
 %section.tab-content
   %section.tab-pane.active#link
     = form_for @post do |f|
-      = f.label :title
-      = f.text_field :title
-      = f.label :url
-      = f.text_field :url
-      = f.submit 'Submit', id: 'submit-link'
+      %section.form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      %section.form-group
+        = f.label :url
+        = f.text_field :url, class: 'form-control'
+      = f.submit 'Submit', id: 'submit-link', class: 'btn btn-default'
   %section.tab-pane#text
     = form_for @post do |f|
-      = f.label :title
-      = f.text_field :title
-      = f.label :text
-      = f.text_area :text
-      = f.submit 'Submit', id: 'submit-text'
+      %section.form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      %section.form-group
+        = f.label :text
+        = f.text_area :text, class: 'form-control'
+      = f.submit 'Submit', id: 'submit-text', class: 'btn btn-default'
