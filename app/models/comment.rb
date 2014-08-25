@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
 
   def created_by?(user, post)
     return false if user.nil? || post.nil?
-    (user.id == self.user_id && post.id == self.post_id) ? true : false
+    user.id == self.user_id && post.id == self.post_id
   end
 end

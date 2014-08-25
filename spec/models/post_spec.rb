@@ -113,4 +113,31 @@ RSpec.describe Post, :type => :model do
       expect(@post.created_by?(@anna)).to eq false
     end
   end
+
+  describe '#controversy_score' do
+    before do
+      @bob = create(:user)
+      @anna = create(:anna)
+      @miahi = create(:miahi)
+      @post = create(:post, user: @bob)
+    end
+
+    it 'should return 0 if score is 0' do
+      expect(@post.controversy_score).to eq 0
+    end
+
+    it 'should return 1.73 if 2 up votes and 1 down vote' do
+      create(:vote, user: @bob, post: @post)
+      create(:vote, user: @anna, post: @post)
+      create(:down_vote, user: @miahi, post: @post)
+      expect(@post.controversy_score).to be_within(0.01).of(1.73)
+    end
+
+    it 'should return 1.73 if 1 up vote and 2 down votes' do
+      create(:vote, user: @bob, post: @post)
+      create(:down_vote, user: @anna, post: @post)
+      create(:down_vote, user: @miahi, post: @post)
+      expect(@post.controversy_score).to be_within(0.01).of(1.73)
+    end
+  end
 end
