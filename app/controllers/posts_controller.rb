@@ -28,9 +28,11 @@ class PostsController < ApplicationController
 
   def newest
     @posts = Post.order(created_at: :desc)
+    render 'index'
   end
 
   def top
     @posts = Post.all.sort_by(&:score).reverse
+    render 'index'
   end
 end
