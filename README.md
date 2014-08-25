@@ -67,14 +67,13 @@ rspec
 * Display posts that are new
 * Display by top posts
 * Display posts by controversy score
+* Display posts that are rising
 * User page displays user's posts and comments
 * Users can delete their posts
 * Users can delete their comments
 
 
 ## Missing Features
-
-* Display posts that are rising
 * Users can edit their posts
 * Users can edit their comments
 * User can reply to comments
