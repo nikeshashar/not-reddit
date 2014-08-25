@@ -35,4 +35,10 @@ class PostsController < ApplicationController
     @posts = Post.all.sort_by(&:score).reverse
     render 'index'
   end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:notice] = "Post deleted successfully"
+    redirect_to posts_path
+  end
 end

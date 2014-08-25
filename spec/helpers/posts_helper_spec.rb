@@ -24,4 +24,19 @@ RSpec.describe PostsHelper, :type => :helper do
       expect(add_voting_colours(false, 'vote-up')).to eq 'vote-up'
     end
   end
+
+  describe '#add_delete_link' do
+    before do
+      @bob = create(:user)
+      @post = create(:post, user: @bob)
+    end
+
+    it 'adds nothing if user is not owner of post' do
+      expect(add_delete_link(false, @post)).to eq ''
+    end
+
+    it 'adds link if is owner' do
+      expect(add_delete_link(true, @post)).to eq(link_to('delete', post_path(@post), method: :delete, class: 'delete-link pull-right'))
+    end
+  end
 end

@@ -20,4 +20,23 @@ describe 'users' do
     click_on 'Log in'
     expect(page).to have_content 'Signed in successfully'
   end
+
+  context 'deleting posts' do
+    before do
+      @anna = create(:anna)
+      login_as user   
+    end
+
+    it 'as the creator has option to delete link' do
+      create(:post, user: user)
+      visit posts_path 
+      expect(page).to have_css '.delete-link', text: 'delete' 
+    end
+    it 'as the creator can delete link' do
+      create(:post, user: user)
+      visit posts_path
+      find('.delete-link').click
+      expect(page).not_to have_content 'Fail'
+    end
+  end
 end

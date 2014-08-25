@@ -7,4 +7,8 @@ module PostsHelper
   def add_voting_colours(has_voted, original)
     has_voted ? original + ' selected' : original
   end
+
+  def add_delete_link is_owner, post
+    is_owner ? link_to('delete', post_path(post), method: :delete, class: 'delete-link pull-right') : ''
+  end
 end

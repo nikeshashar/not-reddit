@@ -26,6 +26,11 @@ class Post < ActiveRecord::Base
     (order + sign * seconds / 45000).round(7)
   end
 
+  def created_by? user
+    return false if user.nil?
+    user.id == self.user_id ? true : false
+  end
+
   private
   def sign_from score
     return 0 if score == 0
