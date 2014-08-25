@@ -72,4 +72,26 @@ RSpec.describe Post, :type => :model do
       expect(@post.has_already_voted?(@bob, 1)).to be false
     end
   end
+
+  describe '#hot_points' do
+    before do
+      @bob = create(:user)
+      @post = create(:post, user: @bob)
+    end
+
+    it 'should return 0 if score is 0' do
+      expect(@post.hot_points).to eq 0
+    end
+
+    it 'should return 6109 if score is 1 and created now' do
+      create(:vote, user: @bob, post: @post)
+      expect(@post.hot_points).to eq 6109.0
+    end
+
+    it 'should return if score is -1 and created now' do
+      create(:down_vote, user: @bob, post: @post)
+      expect(@post.hot_points).to eq -6110.0
+    end
+
+  end
 end

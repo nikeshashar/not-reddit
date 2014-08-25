@@ -53,9 +53,10 @@ rspec
 * Users only has one vote per post
 * Users can change their vote from up to down and vice versa
 * Post displays the voting score
+* Implemented Reddit's hot points algorithm
+* Display posts that are hot
 
 ## Missing Features
-* Display posts that are hot
 * Display posts that are new
 * Display posts that are rising
 * Display posts that are top
