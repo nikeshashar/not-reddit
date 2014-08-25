@@ -2,6 +2,15 @@
 [![Code Climate](https://codeclimate.com/github/yoshdog/not-reddit/badges/gpa.svg)](https://codeclimate.com/github/yoshdog/not-reddit)
 [![Test Coverage](https://codeclimate.com/github/yoshdog/not-reddit/badges/coverage.svg)](https://codeclimate.com/github/yoshdog/not-reddit)
 
+Recreate the reddit website as close to possible. This also includes the ability to view posts by the following categories:
+* Hot
+* New
+* Top
+* Controversial
+* Rising
+
+I used the following [reddit algorithms](https://github.com/reddit/reddit/blob/master/r2/r2/lib/db/_sorts.pyx) to implement these post categories.
+
 ## Deployed
 Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 
@@ -59,15 +68,15 @@ rspec
 * Display posts that are top
 * User page displays user's posts and comments
 * Users can delete their posts
+* Users can delete their comments
 
 
 ## Missing Features
-[Reddit algoritms](https://github.com/reddit/reddit/blob/master/r2/r2/lib/db/_sorts.pyx)
+
 * Display posts that are rising
 * Display posts that are controversial (total votes / max(abs(upvotes-downvotes), 1))
 * Users can edit their posts
 * Users can edit their comments
-* Users can delete their comments
 * User can reply to comments
 * User can up and down vote comments and replies
 * Comments are ordered by score
