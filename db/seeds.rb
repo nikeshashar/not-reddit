@@ -7,7 +7,7 @@ posts = []
 
 post_titles = %w{Nandos JayZ England Poker Australia BBC}
 urls = [nil, nil, 'http://nandos.co.uk', 'http://google.com', 'http://bbc.co.uk']
-statements = ['', '', 'Hipstas are taking over', 'Today is cray cray!', '5 Circle sold for 1 billion dollars!']
+statements = ['', '', 'Hipstas are taking over', 'Today is cray cray!', '5 Circle sold for 1 billion dollars!', '#YOLO']
 comments = ['Worst post ever!', 'Wow this is a really useful link', 'Lol, so so lame', 'The UK governement will ban your posts', 'Watch out for the NSA', 'I like your thinking', 'Swaggy #yolo']
 votes = [1, -1]
 
