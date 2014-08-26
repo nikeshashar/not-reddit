@@ -23,7 +23,7 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 * JQuery
 * AJAX
 * SASS / CSS
-* HAML
+* Haml
 * Bootstrap
 
 ## Testing Suite
