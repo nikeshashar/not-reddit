@@ -15,10 +15,7 @@ class Post < ActiveRecord::Base
   end
 
   def hot_points
-    order = Math.log([1, self.score.abs].max,10)
-    sign = sign_from self.score
-    seconds = self.created_at.to_i - 1134028003
-    (order + sign * seconds / 45000).round(7)
+    (order + sign * epoch_seconds / 45000).round(7)
   end
 
   def controversy_score
@@ -57,5 +54,17 @@ class Post < ActiveRecord::Base
 
   def balance
     (up_votes > down_votes ) ? down_votes.to_f / up_votes : up_votes.to_f / down_votes
+  end
+
+  def order
+    Math.log([1, self.score.abs].max,10)
+  end
+
+  def sign
+    sign_from self.score
+  end
+
+  def epoch_seconds
+    self.created_at.to_i - 1134028003
   end
 end
