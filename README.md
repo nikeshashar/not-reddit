@@ -81,7 +81,6 @@ rspec
 * Users can delete their posts
 * Users can delete their comments
 
-
 ## Missing Features
 * Users can edit their posts
 * Users can edit their comments
