@@ -5,9 +5,9 @@
 Recreate the reddit website as close to possible. This also includes the ability to view posts by the following categories:
 * Hot
 * New
+* Rising
 * Top
 * Controversial
-* Rising
 
 I used the following [reddit algorithms](https://github.com/reddit/reddit/blob/master/r2/r2/lib/db/_sorts.pyx) to implement these post categories.
 
