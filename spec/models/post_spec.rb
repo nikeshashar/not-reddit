@@ -75,6 +75,7 @@ RSpec.describe Post, :type => :model do
 
   describe '#hot_points' do
     before do
+      Timecop.freeze(Date.new(2014,8,20))
       @bob = create(:user)
       @post = create(:post, user: @bob)
     end
