@@ -17,7 +17,7 @@ Check it out on [Heroku](http://not-reddit.herokuapp.com/)
 ## Objectives
 Recreate reddit using Rails in a weekend. This exercise really showed me how useful Rails is at rapid development. I was able to re-create a working version of reddit with most of the functionality in less than a weekend.
 
-In future, I would use a [Single Table Inheritance](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/) so that a link and text model will inherit from a single Post model. This will allow me to share common functionality to each type of post and make my application more extensible if I wanted to add in different types of posts (eg. Picture or Videos) in the future.
+In future, I would use a [Single Table Inheritance](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/) so that a Link and Text model will inherit from a single Post model. This will allow me to share common functionality to each type of post and make my application more extensible if I wanted to add in different types of posts (eg. Picture or Videos) in the future.
 
 ## Tech Stack
 * Ruby 2.1.2
